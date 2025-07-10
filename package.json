@@ -1,0 +1,13 @@
+
+{
+  "name": "binance-dashboard",
+  "version": "1.0.0",
+  "description": "Binance Dashboard Clone",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

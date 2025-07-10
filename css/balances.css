@@ -1,0 +1,197 @@
+.text-accent-binance {
+    color: var(--accent-yellow);
+}
+
+.text-muted-binance {
+    color: var(--text-secondary);
+}
+
+/* Status badges (Binance-themed colors) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.completed {
+    background-color: rgba(14, 203, 129, 0.2); /* var(--accent-green) with opacity */
+    color: var(--accent-green);
+}
+.status-badge.pending {
+    background-color: rgba(255, 193, 7, 0.2); /* Yellow for pending */
+    color: var(--status-pending);
+}
+.status-badge.requested {
+    background-color: rgba(240, 185, 11, 0.2); /* Binance Yellow with opacity */
+    color: var(--accent-yellow);
+}
+.status-badge.active {
+    background-color: rgba(14, 203, 129, 0.2);
+    color: var(--accent-green);
+}
+.status-badge.failed {
+    background-color: rgba(246, 70, 93, 0.2); /* Binance Red with opacity */
+    color: var(--accent-red);
+}
+
+/* Ensure text colors are applied with !important to override defaults */
+.text-accent-green {
+    color: var(--accent-green) !important;
+}
+.text-accent-red {
+    color: var(--accent-red) !important;
+}
+.text-muted-binance {
+    color: var(--text-secondary) !important;
+}
+
+/* Crypto icon styling */
+.crypto-icon-container {
+    width: 28px; /* Slightly larger size for icons */
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.crypto-icon-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.page-content {
+    /* Padding and flex properties are now handled by Tailwind classes in the HTML */
+    background: linear-gradient(to bottom right, var(--background-dark), var(--background-light));
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.modal-content .card-header {
+    margin-bottom: 1rem;
+}
+
+.modal-content .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-content .icon-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.modal-content .icon-button:hover {
+    color: var(--text-primary);
+}
+
+.modal-content label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.modal-content .security-notice {
+    background-color: rgba(246, 70, 93, 0.1);
+    border: 1px solid var(--accent-red);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    color: var(--accent-red);
+    font-size: 0.875rem;
+}
+
+.modal-content .security-notice .title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Modal Adjustments --- */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1rem; /* Reduce padding on mobile */
+        max-height: 90vh; /* Prevent modal from being too tall */
+        overflow-y: auto; /* Allow scrolling within the modal */
+    }
+}
+.main-content-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+.cyber-card {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color); /* Changed from --sidebar-border as sidebar is removed */
+    background-color: var(--card-background);
+    color: var(--card-foreground);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Light Mode Theme --- */
+body.light-mode {
+    --background-dark: #F5F5F5;
+    --background-light: #FFFFFF;
+    --card-background: #FFFFFF;
+    --border-color: #EAECEF;
+    --text-primary: #181A20;
+    --text-secondary: #707A8A;
+    --card-shadow-color: rgba(0, 0, 0, 0.05);
+    --primary-button-text: #181A20;
+}
+
+body.light-mode .secondary-button {
+    background-color: #F5F5F5;
+    color: var(--text-primary);
+}

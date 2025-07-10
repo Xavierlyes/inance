@@ -1,0 +1,1056 @@
+/* Binance Dark Theme Palette */
+:root {
+    --background-dark: #222222; /* Overall page background - slightly greyer */
+    --background-light: #1C1F24; /* Used for inner sections like individual crypto rows */
+    --card-background: #1F2226; /* Main dashboard cards background - now a lighter grey for contrast */
+    --border-color: #2F343A; /* More subtle border color for general cards */
+    --text-primary: #E0E6EB; /* Slightly softer off-white for main text */
+    --text-secondary: #7A828C; /* Muted grey for secondary text */
+    --accent-yellow: #F0B90B; /* Binance Yellow */
+    --accent-green: #0ECB81; /* Binance Green for success */
+    --accent-red: #F6465D; /* Binance Red for warnings/errors */
+    --button-gradient-start: #F0B90B; /* Binance Yellow for primary button */
+    --button-gradient-end: #D4A700; /* Darker yellow for primary button gradient end */
+    --card-shadow-color: rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem; /* Slightly larger radius for some elements */
+
+    /* Specific status colors */
+    --status-green: var(--accent-green);
+    --status-red: var(--accent-red);
+    --status-pending: #FFC107; /* Orange/Yellow for pending */
+
+    /* Virtual card specific colors */
+    --vc-accent-blue: #0A0A0A; /* Very dark grey, almost black for card body */
+    --vc-accent-purple: #000000; /* Pure black for card body */
+    --vc-chip-gradient-start: #FFD700; /* Classic Gold Start for chip */
+    --vc-chip-gradient-end: #DAA520; /* Darker Gold End for chip */
+
+    /* Chart specific colors (Binance theme) */
+    --chart-fiat-color: var(--text-secondary); /* Muted grey for fiat in chart */
+    --chart-crypto-color: var(--accent-green); /* Binance green for crypto in chart */
+
+    /* New variables from provided artifact's :root */
+    --background: var(--background-dark);
+    --muted: var(--background-light);
+    --foreground: var(--text-primary);
+    --muted-foreground: var(--text-secondary);
+    --sidebar: var(--card-background); /* Corrected: should be card-background for sidebar */
+    --sidebar-border: var(--border-color);
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-accent: var(--accent-yellow);
+    --sidebar-accent-background: rgba(240, 185, 11, 0.2);
+    --card-foreground: var(--text-primary);
+    --primary-button-bg-start: var(--button-gradient-start);
+    --primary-button-bg-end: var(--button-gradient-end);
+    --primary-button-text: var(--background-dark);
+    --yellow-accent: #F0B90B;
+    --green-text: #0ECB81;
+    --red-text: #F6465D;
+    --binance-primary: 45 100% 60%;
+    --binance-primary-foreground: 220 10% 8%;
+    --binance-ring: 45 100% 60%;
+
+    /* Custom variables for cyber/modal colors - now yellow/orange themed */
+    --binance-orange-light: #F8D12F; /* Brighter Binance yellow */
+    --binance-orange-dark: #E6B31E; /* Slightly darker, more orange-yellow */
+
+    /* RGB values for transparent backgrounds */
+    --binance-orange-light-rgb: 248, 209, 47; /* RGB for #F8D12F */
+    --accent-green-rgb: 14, 203, 129; /* RGB for #0ECB81 */
+}
+
+/* Applying dark theme variables */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Universal box-sizing and border reset */
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid transparent;
+}
+
+/* Main element styles */
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+/* Custom styles for cards and buttons (Binance-themed) */
+.dashboard-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl); /* Slightly larger radius */
+    box-shadow: 0 10px 20px var(--card-shadow-color); /* More pronounced shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.primary-button {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: var(--background-dark); /* Dark text on yellow */
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(240, 185, 11, 0.4); /* Stronger yellow glow */
+    border: none; /* Remove default border */
+}
+.primary-button:hover {
+    background: linear-gradient(to right, var(--button-gradient-end), var(--button-gradient-start)); /* Reverse gradient on hover */
+    box-shadow: 0 6px 18px rgba(240, 185, 11, 0.6);
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+    border-radius: var(--radius-md);
+}
+.secondary-button:hover {
+    background-color: var(--border-color); /* Darker on hover */
+    border-color: var(--accent-yellow); /* Yellow border on hover */
+    color: var(--accent-yellow); /* Yellow text on hover */
+    transform: translateY(-1px);
+}
+
+.text-accent-binance {
+    color: var(--accent-yellow);
+}
+
+.text-muted-binance {
+    color: var(--text-secondary);
+}
+
+/* Specific styles for the virtual card */
+.virtual-card {
+    background: linear-gradient(to br, var(--vc-accent-blue), var(--vc-accent-purple));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.virtual-card:hover {
+    transform: scale(1.03) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+.virtual-card-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px);
+    background-size: 20px 20px;
+}
+.virtual-card-chip {
+    background: linear-gradient(to br, var(--vc-chip-gradient-start), var(--vc-chip-gradient-end));
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+}
+.virtual-card-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 4px;
+    height: 100%;
+}
+.virtual-card-chip-grid > div {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+}
+.virtual-card-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1) 50%, transparent);
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+    pointer-events: none;
+}
+.virtual-card:hover .virtual-card-shine {
+    transform: translateX(100%);
+}
+
+/* Status badges (Binance-themed colors) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.completed {
+    background-color: rgba(14, 203, 129, 0.2); /* var(--accent-green) with opacity */
+    color: var(--accent-green);
+}
+.status-badge.pending {
+    background-color: rgba(255, 193, 7, 0.2); /* Yellow for pending */
+    color: var(--status-pending);
+}
+.status-badge.requested {
+    background-color: rgba(240, 185, 11, 0.2); /* Binance Yellow with opacity */
+    color: var(--accent-yellow);
+}
+.status-badge.active {
+    background-color: rgba(14, 203, 129, 0.2);
+    color: var(--accent-green);
+}
+.status-badge.failed {
+    background-color: rgba(246, 70, 93, 0.2); /* Binance Red with opacity */
+    color: var(--accent-red);
+}
+
+/* Ensure text colors are applied with !important to override defaults */
+.text-accent-green {
+    color: var(--accent-green) !important;
+}
+.text-accent-red {
+    color: var(--accent-red) !important;
+}
+.text-muted-binance {
+    color: var(--text-secondary) !important;
+}
+
+/* Crypto icon styling */
+.crypto-icon-container {
+    width: 28px; /* Slightly larger size for icons */
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.crypto-icon-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.header { /* This is the global header now */
+    background-color: var(--card-background); /* bg-[var(--card-background)] */
+    border-bottom: 1px solid var(--border-color); /* border-b border-[var(--border-color)] */
+    padding: 1rem; /* p-4 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.page-content {
+    padding: 1.5rem; /* p-6 */
+    padding-bottom: 5rem; /* pb-20 */
+    min-height: calc(100vh - 64px); /* Adjust for header height */
+    background: linear-gradient(to bottom right, var(--background-dark), var(--background-light));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -256px; /* Hide by default */
+        height: 100vh;
+        z-index: 20;
+    }
+    .sidebar.open {
+        left: 0;
+    }
+    .main-content {
+        width: 100%; /* Take full width on mobile */
+    }
+    .grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .flex-col.sm\:flex-row {
+        flex-direction: column;
+    }
+    .sm\:items-center {
+        align-items: flex-start;
+    }
+    .sm\:justify-end {
+        justify-content: flex-start;
+    }
+    .sm\:gap-6 {
+        gap: 1rem;
+    }
+    .header .md\:hidden {
+        display: flex !important; /* Show mobile toggle */
+    }
+    .header .hidden.sm\:flex {
+        display: none !important; /* Hide live market on small screens */
+    }
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.modal-content .card-header {
+    margin-bottom: 1rem;
+}
+
+.modal-content .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-content .icon-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.modal-content .icon-button:hover {
+    color: var(--text-primary);
+}
+
+.modal-content label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.modal-content .security-notice {
+    background-color: rgba(246, 70, 93, 0.1);
+    border: 1px solid var(--accent-red);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    color: var(--accent-red);
+    font-size: 0.875rem;
+}
+
+.modal-content .security-notice .title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Multi-step form specific styles */
+.modal-content .progress-bar-track {
+    background-color: var(--border-color);
+}
+.modal-content .progress-bar-fill {
+    background: linear-gradient(to right, var(--binance-orange-light, var(--accent-yellow)), var(--binance-orange-dark, var(--accent-yellow)));
+}
+
+.modal-content .step-icon-active {
+    border-color: var(--accent-yellow);
+    background-color: rgba(240, 185, 11, 0.2);
+    color: var(--accent-yellow);
+}
+.modal-content .step-icon-completed {
+    border-color: var(--accent-green);
+    background-color: rgba(14, 203, 129, 0.2);
+    color: var(--accent-green);
+}
+.modal-content .step-icon-inactive {
+    border-color: var(--border-color);
+    background-color: var(--background-light);
+    color: var(--text-secondary);
+}
+/* Request Card Modal Steps */
+.step-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.step-icon {
+    width: 3rem; /* 48px */
+    height: 3rem; /* 48px */
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+.step-icon svg {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+}
+.step-label {
+    font-size: 0.75rem; /* 12px */
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Convert Page Specific Styles */
+.binance-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+.binance-text-primary {
+    color: var(--accent-yellow);
+}
+.binance-muted-text {
+    color: var(--text-secondary);
+}
+.binance-input {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    width: 100%;
+}
+.binance-input:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 2px rgba(240, 185, 11, 0.3);
+}
+.binance-asset-selector {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+}
+.binance-swap-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-yellow);
+    transition: all 0.2s ease;
+}
+.binance-swap-button:hover {
+    transform: rotate(180deg);
+    background-color: var(--border-color);
+}
+.binance-refresh-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.binance-refresh-button:hover {
+    color: var(--accent-yellow);
+}
+.binance-button-primary {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: var(--background-dark);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+}
+.binance-button-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(240, 185, 11, 0.6);
+}
+.binance-button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Profile & Security Page Specific Styles */
+.profile-section,
+.settings-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-section:last-child,
+.settings-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.profile-section h2,
+.settings-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+.profile-item,
+.settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+.profile-item .label,
+.settings-item .label {
+    color: var(--text-secondary);
+}
+.profile-item .value,
+.settings-item .value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+.profile-item .value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.profile-item .value.pending-review {
+    color: var(--status-pending);
+}
+.profile-item .value.verified,
+.settings-item .value.enabled {
+    color: var(--accent-green);
+}
+.settings-item .value.disabled {
+    color: var(--accent-red);
+}
+.action-btn {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+.action-btn:hover {
+    background-color: var(--border-color);
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.action-btn-secondary {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.action-btn-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+
+/* Settings Page Specific Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    transition: .4s;
+    border-radius: 22px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--text-secondary);
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+input:checked + .slider:before {
+    transform: translateX(18px);
+    background-color: var(--background-dark);
+}
+.custom-select-wrapper {
+    position: relative;
+    width: 120px;
+}
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+.custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-top: 0.25rem;
+    z-index: 10;
+    display: none;
+}
+.custom-select-wrapper.active .custom-options {
+    display: block;
+}
+.custom-option {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}
+.custom-option:hover, .custom-option.selected {
+    background-color: var(--background-light);
+}
+
+/* Styles from old style.css for restored components (from balances.html) */
+.global-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--sidebar-border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.global-header .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--yellow-accent);
+    flex-shrink: 0;
+}
+.global-header .logo-area img {
+    width: 32px;
+    height: 32px;
+}
+.global-header .search-container {
+    flex-grow: 1;
+    max-width: 400px;
+    position: relative;
+}
+.global-header .search-container input {
+    width: 100%;
+    height: 2.25rem;
+    padding-left: 2.5rem;
+    padding-right: 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--sidebar-border);
+    background-color: var(--muted);
+    color: var(--foreground);
+    font-size: 0.875rem;
+}
+.global-header .search-container svg {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted-foreground);
+    width: 1rem;
+    height: 1rem;
+}
+
+/* --- Responsive Modal Adjustments --- */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1rem; /* Reduce padding on mobile */
+        max-height: 90vh; /* Prevent modal from being too tall */
+        overflow-y: auto; /* Allow scrolling within the modal */
+    }
+    #request-card-modal .step-icon {
+        width: 2.5rem; /* 40px */
+        height: 2.5rem; /* 40px */
+    }
+    #request-card-modal .step-icon svg {
+        width: 1.25rem; /* 20px */
+        height: 1.25rem; /* 20px */
+    }
+    #request-card-modal .step-label {
+        font-size: 0.625rem; /* 10px */
+        line-height: 1.2;
+        max-width: 50px;
+        margin-top: 0.25rem;
+    }
+}
+.global-header .action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+.main-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.main-content-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+.cyber-card {
+    border-radius: 0.5rem;
+    border: 1px solid var(--sidebar-border);
+    background-color: var(--card-background);
+    color: var(--card-foreground);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Transaction History Specific Styles */
+.history-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--background-light);
+    border-radius: var(--radius-lg);
+}
+.history-filters input, .history-filters select {
+    background-color: var(--muted);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+    color: var(--text-primary);
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+.data-table tbody tr:hover {
+    background-color: var(--background-light);
+}
+.tx-link {
+    color: var(--accent-yellow);
+    text-decoration: none;
+}
+.tx-link:hover {
+    text-decoration: underline;
+}
+.pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.pagination-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--background-light);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Sortable table styles */
+.sortable-header {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.sortable-header:hover {
+    background-color: var(--background-light);
+}
+
+.sortable-header .sort-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.5rem;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.sortable-header:hover .sort-icon,
+.sortable-header[data-sort-direction] .sort-icon {
+    opacity: 1;
+}
+
+.sortable-header[data-sort-direction="asc"] .sort-icon::before { content: '▲'; font-size: 0.8em; }
+.sortable-header[data-sort-direction="desc"] .sort-icon::before { content: '▼'; font-size: 0.8em; }
+
+/* --- Light Mode Theme --- */
+body.light-mode {
+    --background-dark: #F5F5F5;
+    --background-light: #FFFFFF;
+    --card-background: #FFFFFF;
+    --border-color: #EAECEF;
+    --text-primary: #181A20;
+    --text-secondary: #707A8A;
+    --card-shadow-color: rgba(0, 0, 0, 0.05);
+    --sidebar: #FFFFFF;
+    --sidebar-border: #EAECEF;
+    --sidebar-foreground: #181A20;
+    --sidebar-accent-background: rgba(240, 185, 11, 0.15);
+    --primary-button-text: #181A20;
+    --vc-accent-blue: #EAECEF;
+    --vc-accent-purple: #DCDFE4;
+    --vc-chip-gradient-start: #B0B0B0;
+    --vc-chip-gradient-end: #909090;
+}
+
+body.light-mode .secondary-button {
+    background-color: #F5F5F5;
+    color: var(--text-primary);
+}
+
+body.light-mode .virtual-card {
+    color: var(--text-primary);
+}
+
+body.light-mode .slider {
+    background-color: #EAECEF;
+    border-color: #DCDFE4;
+}
+
+/* --- Profile Dropdown --- */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: 240px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 20px var(--card-shadow-color);
+    z-index: 50;
+    padding: 0.5rem;
+    display: none; /* Hidden by default */
+}
+
+.profile-dropdown.open {
+    display: block;
+}
+
+.profile-dropdown .dropdown-header {
+    padding: 0.5rem 0.75rem;
+}
+
+.profile-dropdown .dropdown-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0.5rem 0;
+}
+
+.profile-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.profile-dropdown .dropdown-item:hover {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+}
+
+.profile-dropdown .dropdown-item svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* --- Live Chat Widget --- */
+.chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 350px;
+    max-width: 90vw;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.chat-widget.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-light);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    cursor: grab;
+}
+.chat-messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.chat-message {
+    max-width: 80%;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    line-height: 1.4;
+}
+.chat-message.user {
+    background-color: var(--accent-yellow);
+    color: var(--background-dark);
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+.chat-message.agent {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+}
+.chat-message.agent.typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.chat-message.agent.typing span {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    animation: typing-bounce 1s infinite;
+}
+.chat-message.agent.typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-message.agent.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-4px); }
+}
+.chat-form {
+    display: flex;
+    padding: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+.chat-form input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    padding: 0 0.5rem;
+}
+.chat-form .icon-button {
+    color: var(--accent-yellow);
+}

@@ -1,0 +1,262 @@
+/* Transaction History Specific Styles */
+.history-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--background-light);
+    border-radius: var(--radius-lg);
+}
+.history-filters input, .history-filters select {
+    background-color: var(--muted);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+    color: var(--text-primary);
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+.data-table tbody tr:hover {
+    background-color: var(--background-light);
+}
+.tx-link {
+    color: var(--accent-yellow);
+    text-decoration: none;
+}
+.tx-link:hover {
+    text-decoration: underline;
+}
+.pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.pagination-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--background-light);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Sortable table styles */
+.sortable-header {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.sortable-header:hover {
+    background-color: var(--background-light);
+}
+
+.sortable-header .sort-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.5rem;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.sortable-header:hover .sort-icon,
+.sortable-header[data-sort-direction] .sort-icon {
+    opacity: 1;
+}
+
+.sortable-header[data-sort-direction="asc"] .sort-icon::before { content: '▲'; font-size: 0.8em; }
+.sortable-header[data-sort-direction="desc"] .sort-icon::before { content: '▼'; font-size: 0.8em; }
+
+/* --- Light Mode Theme --- */
+body.light-mode {
+    --background-dark: #F5F5F5;
+    --background-light: #FFFFFF;
+    --card-background: #FFFFFF;
+    --border-color: #EAECEF;
+    --text-primary: #181A20;
+    --text-secondary: #707A8A;
+    --card-shadow-color: rgba(0, 0, 0, 0.05);
+    --sidebar: #FFFFFF;
+    --sidebar-border: #EAECEF;
+    --sidebar-foreground: #181A20;
+    --sidebar-accent-background: rgba(240, 185, 11, 0.15);
+    --primary-button-text: #181A20;
+    --vc-accent-blue: #EAECEF;
+    --vc-accent-purple: #DCDFE4;
+    --vc-chip-gradient-start: #B0B0B0;
+    --vc-chip-gradient-end: #909090;
+}
+
+body.light-mode .secondary-button {
+    background-color: #F5F5F5;
+    color: var(--text-primary);
+}
+
+body.light-mode .virtual-card {
+    color: var(--text-primary);
+}
+
+body.light-mode .slider {
+    background-color: #EAECEF;
+    border-color: #DCDFE4;
+}
+
+/* --- Profile Dropdown --- */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: 240px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 20px var(--card-shadow-color);
+    z-index: 50;
+    padding: 0.5rem;
+    display: none; /* Hidden by default */
+}
+
+.profile-dropdown.open {
+    display: block;
+}
+
+.profile-dropdown .dropdown-header {
+    padding: 0.5rem 0.75rem;
+}
+
+.profile-dropdown .dropdown-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0.5rem 0;
+}
+
+.profile-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.profile-dropdown .dropdown-item:hover {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+}
+
+.profile-dropdown .dropdown-item svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* --- Live Chat Widget --- */
+.chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 350px;
+    max-width: 90vw;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.chat-widget.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-light);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    cursor: grab;
+}
+.chat-messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.chat-message {
+    max-width: 80%;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    line-height: 1.4;
+}
+.chat-message.user {
+    background-color: var(--accent-yellow);
+    color: var(--background-dark);
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+.chat-message.agent {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+}
+.chat-message.agent.typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.chat-message.agent.typing span {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    animation: typing-bounce 1s infinite;
+}
+.chat-message.agent.typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-message.agent.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-4px); }
+}
+.chat-form {
+    display: flex;
+    padding: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+.chat-form input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    padding: 0 0.5rem;
+}
+.chat-form .icon-button {
+    color: var(--accent-yellow);
+}

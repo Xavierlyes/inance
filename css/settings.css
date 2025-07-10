@@ -1,0 +1,662 @@
+/* Binance Dark Theme Palette */
+:root {
+    --background-dark: #222222; /* Overall page background - slightly greyer */
+    --background-light: #1C1F24; /* Used for inner sections like individual crypto rows */
+    --card-background: #1F2226; /* Main dashboard cards background - now a lighter grey for contrast */
+    --border-color: #2F343A; /* More subtle border color for general cards */
+    --text-primary: #E0E6EB; /* Slightly softer off-white for main text */
+    --text-secondary: #7A828C; /* Muted grey for secondary text */
+    --accent-yellow: #F0B90B; /* Binance Yellow */
+    --accent-green: #0ECB81; /* Binance Green for success */
+    --accent-red: #F6465D; /* Binance Red for warnings/errors */
+    --button-gradient-start: #F0B90B; /* Binance Yellow for primary button */
+    --button-gradient-end: #D4A700; /* Darker yellow for primary button gradient end */
+    --card-shadow-color: rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem; /* Slightly larger radius for some elements */
+
+    /* Specific status colors */
+    --status-green: var(--accent-green);
+    --status-red: var(--accent-red);
+    --status-pending: #FFC107; /* Orange/Yellow for pending */
+
+    /* Virtual card specific colors */
+    --vc-accent-blue: #0A0A0A; /* Very dark grey, almost black for card body */
+    --vc-accent-purple: #000000; /* Pure black for card body */
+    --vc-chip-gradient-start: #FFD700; /* Classic Gold Start for chip */
+    --vc-chip-gradient-end: #DAA520; /* Darker Gold End for chip */
+
+    /* Chart specific colors (Binance theme) */
+    --chart-fiat-color: var(--text-secondary); /* Muted grey for fiat in chart */
+    --chart-crypto-color: var(--accent-green); /* Binance green for crypto in chart */
+
+    /* New variables from provided artifact's :root */
+    --background: var(--background-dark);
+    --muted: var(--background-light);
+    --foreground: var(--text-primary);
+    --muted-foreground: var(--text-secondary);
+    --card-foreground: var(--text-primary);
+    --primary-button-bg-start: var(--button-gradient-start);
+    --primary-button-bg-end: var(--button-gradient-end);
+    --primary-button-text: var(--background-dark);
+    --yellow-accent: #F0B90B;
+    --green-text: #0ECB81;
+    --red-text: #F6465D;
+    --binance-primary: 45 100% 60%;
+    --binance-primary-foreground: 220 10% 8%;
+    --binance-ring: 45 100% 60%;
+
+    /* Custom variables for cyber/modal colors - now yellow/orange themed */
+    --binance-orange-light: #F8D12F; /* Brighter Binance yellow */
+    --binance-orange-dark: #E6B31E; /* Slightly darker, more orange-yellow */
+
+    /* RGB values for transparent backgrounds */
+    --binance-orange-light-rgb: 248, 209, 47; /* RGB for #F8D12F */
+    --accent-green-rgb: 14, 203, 129; /* RGB for #0ECB81 */
+}
+
+/* Applying dark theme variables */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Universal box-sizing and border reset */
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid transparent;
+}
+
+/* Main element styles */
+main {
+    display: block;
+    unicode-bidi: isolate;
+    flex-grow: 1; /* Ensure main content takes available space */
+    overflow-y: auto;
+    background-color: var(--background-dark);
+}
+
+/* Custom styles for cards and buttons (Binance-themed) */
+.dashboard-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl); /* Slightly larger radius */
+    box-shadow: 0 10px 20px var(--card-shadow-color); /* More pronounced shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.primary-button {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: var(--background-dark); /* Dark text on yellow */
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(240, 185, 11, 0.4); /* Stronger yellow glow */
+    border: none; /* Remove default border */
+}
+.primary-button:hover {
+    background: linear-gradient(to right, var(--button-gradient-end), var(--button-gradient-start)); /* Reverse gradient on hover */
+    box-shadow: 0 6px 18px rgba(240, 185, 11, 0.6);
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+    border-radius: var(--radius-md);
+}
+.secondary-button:hover {
+    background-color: var(--border-color); /* Darker on hover */
+    border-color: var(--accent-yellow); /* Yellow border on hover */
+    color: var(--accent-yellow); /* Yellow text on hover */
+    transform: translateY(-1px);
+}
+
+.text-accent-binance {
+    color: var(--accent-yellow);
+}
+
+.text-muted-binance {
+    color: var(--text-secondary);
+}
+
+/* Specific styles for the virtual card */
+.virtual-card {
+    background: linear-gradient(to br, var(--vc-accent-blue), var(--vc-accent-purple));
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.virtual-card:hover {
+    transform: scale(1.03) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+.virtual-card-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px);
+    background-size: 20px 20px;
+}
+.virtual-card-chip {
+    background: linear-gradient(to br, var(--vc-chip-gradient-start), var(--vc-chip-gradient-end));
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+}
+.virtual-card-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 4px;
+    height: 100%;
+}
+.virtual-card-chip-grid > div {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+}
+.virtual-card-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1) 50%, transparent);
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+    pointer-events: none;
+}
+.virtual-card:hover .virtual-card-shine {
+    transform: translateX(100%);
+}
+
+/* Status badges (Binance-themed colors) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.completed {
+    background-color: rgba(14, 203, 129, 0.2); /* var(--accent-green) with opacity */
+    color: var(--accent-green);
+}
+.status-badge.pending {
+    background-color: rgba(255, 193, 7, 0.2); /* Yellow for pending */
+    color: var(--status-pending);
+}
+.status-badge.requested {
+    background-color: rgba(240, 185, 11, 0.2); /* Binance Yellow with opacity */
+    color: var(--accent-yellow);
+}
+.status-badge.active {
+    background-color: rgba(14, 203, 129, 0.2);
+    color: var(--accent-green);
+}
+.status-badge.failed {
+    background-color: rgba(246, 70, 93, 0.2); /* Binance Red with opacity */
+    color: var(--accent-red);
+}
+
+/* Ensure text colors are applied with !important to override defaults */
+.text-accent-green {
+    color: var(--accent-green) !important;
+}
+.text-accent-red {
+    color: var(--accent-red) !important;
+}
+.text-muted-binance {
+    color: var(--text-secondary) !important;
+}
+
+/* Crypto icon styling */
+.crypto-icon-container {
+    width: 28px; /* Slightly larger size for icons */
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.crypto-icon-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.page-content {
+    padding: 1.5rem; /* p-6 */
+    padding-bottom: 5rem; /* pb-20 */
+    min-height: 100vh; /* Full height */
+    background: linear-gradient(to bottom right, var(--background-dark), var(--background-light));
+    max-width: 1200px; /* Centered content */
+    margin: 0 auto; /* Centered content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .flex-col.sm\:flex-row {
+        flex-direction: column;
+    }
+    .sm\:items-center {
+        align-items: flex-start;
+    }
+    .sm\:justify-end {
+        justify-content: flex-start;
+    }
+    .sm\:gap-6 {
+        gap: 1rem;
+    }
+}
+
+/* Convert Page Specific Styles */
+.binance-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+.binance-text-primary {
+    color: var(--accent-yellow);
+}
+.binance-muted-text {
+    color: var(--text-secondary);
+}
+.binance-input {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    width: 100%;
+}
+.binance-input:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 2px rgba(240, 185, 11, 0.3);
+}
+.binance-asset-selector {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+}
+.binance-swap-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-yellow);
+    transition: all 0.2s ease;
+}
+.binance-swap-button:hover {
+    transform: rotate(180deg);
+    background-color: var(--border-color);
+}
+.binance-refresh-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.binance-refresh-button:hover {
+    color: var(--accent-yellow);
+}
+.binance-button-primary {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: var(--background-dark);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+}
+.binance-button-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(240, 185, 11, 0.6);
+}
+.binance-button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Profile & Security Page Specific Styles */
+.profile-section,
+.settings-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-section:last-child,
+.settings-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.profile-section h2,
+.settings-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+.profile-item,
+.settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+.profile-item .label,
+.settings-item .label {
+    color: var(--text-secondary);
+}
+.profile-item .value,
+.settings-item .value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+.profile-item .value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.profile-item .value.pending-review {
+    color: var(--status-pending);
+}
+.profile-item .value.verified,
+.settings-item .value.enabled {
+    color: var(--accent-green);
+}
+.settings-item .value.disabled {
+    color: var(--accent-red);
+}
+.action-btn {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+.action-btn:hover {
+    background-color: var(--border-color);
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.action-btn-secondary {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.action-btn-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+
+/* Settings Page Specific Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    transition: .4s;
+    border-radius: 22px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--text-secondary);
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+}
+input:checked + .slider:before {
+    transform: translateX(18px);
+    background-color: var(--background-dark);
+}
+.custom-select-wrapper {
+    position: relative;
+    width: 120px;
+}
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+.custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-top: 0.25rem;
+    z-index: 10;
+    display: none;
+}
+.custom-select-wrapper.active .custom-options {
+    display: block;
+}
+.custom-option {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}
+.custom-option:hover, .custom-option.selected {
+    background-color: var(--background-light);
+}
+
+/* Styles from old style.css for restored components (from balances.html) */
+.main-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.main-content-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+.cyber-card {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    color: var(--card-foreground);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Transaction History Specific Styles */
+.history-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--background-light);
+    border-radius: var(--radius-lg);
+}
+.history-filters input, .history-filters select {
+    background-color: var(--muted);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+    color: var(--text-primary);
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table th {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+.data-table tbody tr:hover {
+    background-color: var(--background-light);
+}
+.tx-link {
+    color: var(--accent-yellow);
+    text-decoration: none;
+}
+.tx-link:hover {
+    text-decoration: underline;
+}
+.pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.pagination-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--background-light);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Sortable table styles */
+.sortable-header {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.sortable-header:hover {
+    background-color: var(--background-light);
+}
+
+.sortable-header .sort-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.5rem;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.sortable-header:hover .sort-icon,
+.sortable-header[data-sort-direction] .sort-icon {
+    opacity: 1;
+}
+
+.sortable-header[data-sort-direction="asc"] .sort-icon::before { content: '▲'; font-size: 0.8em; }
+.sortable-header[data-sort-direction="desc"] .sort-icon::before { content: '▼'; font-size: 0.8em; }
+
+/* --- Light Mode Theme --- */
+body.light-mode {
+    --background-dark: #F5F5F5;
+    --background-light: #FFFFFF;
+    --card-background: #FFFFFF;
+    --border-color: #EAECEF;
+    --text-primary: #181A20;
+    --text-secondary: #707A8A;
+    --card-shadow-color: rgba(0, 0, 0, 0.05);
+    --primary-button-text: #181A20;
+    --vc-accent-blue: #EAECEF;
+    --vc-accent-purple: #DCDFE4;
+    --vc-chip-gradient-start: #B0B0B0;
+    --vc-chip-gradient-end: #909090;
+}
+
+body.light-mode .secondary-button {
+    background-color: #F5F5F5;
+    color: var(--text-primary);
+}
+
+body.light-mode .virtual-card {
+    color: var(--text-primary);
+}
+
+body.light-mode .slider {
+    background-color: #EAECEF;
+    border-color: #DCDFE4;
+}

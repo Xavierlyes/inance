@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binance Clone - Enhanced</title>
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <svg viewBox="0 0 140 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36 12c0-3.312-2.688-6-6-6s-6 2.688-6 6 2.688 6 6 6 6-2.688 6-6zm-6 3.6c-1.992 0-3.6-1.608-3.6-3.6s1.608-3.6 3.6-3.6 3.6 1.608 3.6 3.6-1.608 3.6-3.6 3.6zm12-3.6c0-3.312-2.688-6-6-6s-6 2.688-6 6 2.688 6 6 6 6-2.688 6-6zm-6 3.6c-1.992 0-3.6-1.608-3.6-3.6s1.608-3.6 3.6-3.6 3.6 1.608 3.6 3.6-1.608 3.6-3.6 3.6zm12-3.6c0-3.312-2.688-6-6-6s-6 2.688-6 6 2.688 6 6 6 6-2.688 6-6zm-6 3.6c-1.992 0-3.6-1.608-3.6-3.6s1.608-3.6 3.6-3.6 3.6 1.608 3.6 3.6-1.608 3.6-3.6 3.6z" fill="#F0B90B"/>
+        </svg>
+      </div>
+      <nav class="main-nav">
+        <a href="#">Buy Crypto</a>
+        <a href="#">Markets</a>
+        <a href="#">Trade</a>
+        <a href="#">Derivatives</a>
+        <a href="#">Earn</a>
+        <a href="#">Finance</a>
+      </nav>
+      <div class="user-actions">
+        <button class="btn btn-outline" onclick="window.location.href='dashboard.html'">Log In</button>
+        <button class="btn" onclick="window.location.href='dashboard.html'">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ticker -->
+  <div class="ticker-container">
+    <div class="container">
+      <div class="ticker">
+        <div class="ticker-item">
+          <span class="coin">BTC/USDT</span>
+          <span class="price">$61,234.56</span>
+          <span class="change text-success">+2.34%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">ETH/USDT</span>
+          <span class="price">$3,412.78</span>
+          <span class="change text-success">+1.56%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">BNB/USDT</span>
+          <span class="price">$578.23</span>
+          <span class="change text-danger">-0.78%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">SOL/USDT</span>
+          <span class="price">$142.67</span>
+          <span class="change text-success">+5.23%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">XRP/USDT</span>
+          <span class="price">$0.5324</span>
+          <span class="change text-danger">-1.12%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">ADA/USDT</span>
+          <span class="price">$0.4567</span>
+          <span class="change text-success">+0.89%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">DOT/USDT</span>
+          <span class="price">$7.89</span>
+          <span class="change text-danger">-2.34%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">DOGE/USDT</span>
+          <span class="price">$0.1234</span>
+          <span class="change text-success">+3.45%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">AVAX/USDT</span>
+          <span class="price">$36.78</span>
+          <span class="change text-success">+1.23%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="coin">LINK/USDT</span>
+          <span class="price">$18.45</span>
+          <span class="change text-danger">-0.67%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="animate">The World's Leading Crypto Exchange</h1>
+        <p class="animate delay-1">Trade Bitcoin, Ethereum, BNB and hundreds of other cryptocurrencies in minutes.</p>
+        <div class="hero-actions animate delay-2">
+          <button class="btn" onclick="window.location.href='dashboard.html'">Get Started</button>
+          <button class="btn btn-outline">Explore Markets</button>
+        </div>
+        <div class="hero-stats animate delay-3">
+          <div class="stat-item">
+            <div class="stat-value">$2.5T+</div>
+            <div class="stat-label">30d Trading Volume</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100M+</div>
+            <div class="stat-label">Registered Users</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">350+</div>
+            <div class="stat-label">Cryptocurrencies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Markets Section -->
+  <section class="markets">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Popular Markets</h2>
+        <p class="section-subtitle">Trade the most active cryptocurrency markets with deep liquidity and tight spreads</p>
+      </div>
+      <table class="markets-table">
+        <thead>
+          <tr>
+            <th>Pair</th>
+            <th>Price</th>
+            <th>24h Change</th>
+            <th>24h Volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="coin-info">
+                <div class="coin-icon">B</div>
+                <div>
+                  <div class="coin-name">Bitcoin</div>
+                  <div class="coin-symbol">BTC</div>
+                </div>
+              </div>
+            </td>
+            <td>$61,234.56</td>
+            <td><span class="price-change text-success text-success-bg">+2.34%</span></td>
+            <td>$3.42B</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="coin-info">
+                <div class="coin-icon">E</div>
+                <div>
+                  <div class="coin-name">Ethereum</div>
+                  <div class="coin-symbol">ETH</div>
+                </div>
+              </div>
+            </td>
+            <td>$3,412.78</td>
+            <td><span class="price-change text-success text-success-bg">+1.56%</span></td>
+            <td>$1.87B</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="coin-info">
+                <div class="coin-icon">B</div>
+                <div>
+                  <div class="coin-name">BNB</div>
+                  <div class="coin-symbol">BNB</div>
+                </div>
+              </div>
+            </td>
+            <td>$578.23</td>
+            <td><span class="price-change text-danger text-danger-bg">-0.78%</span></td>
+            <td>$842.56M</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="coin-info">
+                <div class="coin-icon">S</div>
+                <div>
+                  <div class="coin-name">Solana</div>
+                  <div class="coin-symbol">SOL</div>
+                </div>
+              </div>
+            </td>
+            <td>$142.67</td>
+            <td><span class="price-change text-success text-success-bg">+5.23%</span></td>
+            <td>$723.45M</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="coin-info">
+                <div class="coin-icon">X</div>
+                <div>
+                  <div class="coin-name">XRP</div>
+                  <div class="coin-symbol">XRP</div>
+                </div>
+              </div>
+            </td>
+            <td>$0.5324</td>
+            <td><span class="price-change text-danger text-danger-bg">-1.12%</span></td>
+            <td>$512.34M</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="features-content">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Binance?</h2>
+          <p class="section-subtitle">Join millions of users worldwide who trust Binance for their cryptocurrency needs</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3 class="feature-title">Lightning Fast Trading</h3>
+            <p class="feature-desc">Our matching engine can process up to 1.4 million orders per second, ensuring you get the best prices instantly.</p>
+            <a href="#" class="feature-link">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3 class="feature-title">Secure Storage</h3>
+            <p class="feature-desc">98% of customer funds are stored in cold wallets, protected by multi-signature technology.</p>
+            <a href="#" class="feature-link">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💲</div>
+            <h3 class="feature-title">Low Fees</h3>
+            <p class="feature-desc">Enjoy some of the lowest trading fees in the industry, with additional discounts for BNB holders.</p>
+            <a href="#" class="feature-link">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title">Mobile Trading</h3>
+            <p class="feature-desc">Trade on the go with our award-winning mobile app available for iOS and Android.</p>
+            <a href="#" class="feature-link">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3 class="feature-title">Global Support</h3>
+            <p class="feature-desc">24/7 customer support in multiple languages to assist you with any questions.</p>
+            <a href="#" class="feature-link">Learn more →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3 class="feature-title">Advanced Tools</h3>
+            <p class="feature-desc">Professional trading tools, charts, and indicators for both beginners and experts.</p>
+            <a href="#" class="feature-link">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trading Tools Section -->
+  <section class="trading-tools">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Professional Trading Tools</h2>
+        <p class="section-subtitle">Powerful features designed to help you trade smarter</p>
+      </div>
+      <div class="tools-tabs">
+        <button class="tool-tab active">Advanced Charts</button>
+        <button class="tool-tab">TradingView</button>
+        <button class="tool-tab">API Trading</button>
+        <button class="tool-tab">Algorithmic Orders</button>
+      </div>
+      <div class="tools-content">
+        <div class="tool-image">
+          <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1E2329, #2B3139); display: flex; align-items: center; justify-content: center; color: #848E9C; font-size: 18px;">
+            Advanced Trading Charts Preview
+          </div>
+        </div>
+        <div class="tool-info">
+          <h3>Professional Trading Interface</h3>
+          <p>Our advanced trading interface provides everything you need for technical analysis, with multiple chart types, drawing tools, and indicators. Customize your workspace and track markets in real-time.</p>
+          <p>Access depth charts, order books, and trade history to make informed decisions. Set price alerts and never miss an opportunity.</p>
+          <button class="btn" style="margin-top: 20px;">Start Trading</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download">
+    <div class="container">
+      <div class="download-content">
+        <h2 class="download-title animate">Trade Anywhere, Anytime</h2>
+        <p class="download-desc animate delay-1">Download the Binance app to manage your portfolio, trade cryptocurrencies, and stay updated on market movements wherever you are.</p>
+        <div class="download-badges animate delay-2">
+          <img src="https://bin.bnbstatic.com/static/images/common/ios_en.svg" alt="App Store" class="download-badge">
+          <img src="https://bin.bnbstatic.com/static/images/common/android_en.svg" alt="Google Play" class="download-badge">
+          <img src="https://bin.bnbstatic.com/static/images/common/windows_en.svg" alt="Windows" class="download-badge">
+          <img src="https://bin.bnbstatic.com/static/images/common/mac_en.svg" alt="Mac" class="download-badge">
+        </div>
+        <div class="qr-container animate delay-3">
+          <div class="qr-code"></div>
+          <p class="qr-desc">Scan to download</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="news">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Latest News & Updates</h2>
+        <p class="section-subtitle">Stay informed with the latest cryptocurrency news and Binance announcements</p>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-image">
+            <div class="news-date">June 15, 2023</div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">Binance Launches New Staking Products with Higher Yields</h3>
+            <p class="news-excerpt">Earn up to 15% APY on popular cryptocurrencies with our new flexible staking options.</p>
+            <a href="#" class="news-link">Read more →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image">
+            <div class="news-date">June 10, 2023</div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">Bitcoin Halving 2024: What You Need to Know</h3>
+            <p class="news-excerpt">Prepare for the next Bitcoin halving event and its potential impact on the market.</p>
+            <a href="#" class="news-link">Read more →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image">
+            <div class="news-date">June 5, 2023</div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">Binance Academy: Learn About Web3 and DeFi</h3>
+            <p class="news-excerpt">New educational content added to help users understand decentralized finance.</p>
+            <a href="#" class="news-link">Read more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Products</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Exchange</a>
+            <a href="#" class="footer-link">Academy</a>
+            <a href="#" class="footer-link">Live</a>
+            <a href="#" class="footer-link">Charity</a>
+            <a href="#" class="footer-link">Card</a>
+            <a href="#" class="footer-link">Gift Card</a>
+            <a href="#" class="footer-link">NFT</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Services</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Downloads</a>
+            <a href="#" class="footer-link">Desktop Application</a>
+            <a href="#" class="footer-link">Buy Crypto</a>
+            <a href="#" class="footer-link">Institutional Services</a>
+            <a href="#" class="footer-link">OTC Trading</a>
+            <a href="#" class="footer-link">Referral</a>
+            <a href="#" class="footer-link">Affiliate</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Support</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Request a Feature</a>
+            <a href="#" class="footer-link">24/7 Support Center</a>
+            <a href="#" class="footer-link">Trading Rules</a>
+            <a href="#" class="footer-link">Fees</a>
+            <a href="#" class="footer-link">API Documentation</a>
+            <a href="#" class="footer-link">Binance Verify</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Company</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Careers</a>
+            <a href="#" class="footer-link">Business Contacts</a>
+            <a href="#" class="footer-link">Community</a>
+            <a href="#" class="footer-link">Blog</a>
+            <a href="#" class="footer-link">Terms</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Learn</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Learn & Earn</a>
+            <a href="#" class="footer-link">Browse Crypto Prices</a>
+            <a href="#" class="footer-link">Bitcoin Price</a>
+            <a href="#" class="footer-link">Ethereum Price</a>
+            <a href="#" class="footer-link">Buy BNB</a>
+            <a href="#" class="footer-link">Buy Bitcoin</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.74 0 12c0 3.26.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.26 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.26-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+        <div class="footer-legal">
+          <a href="#" class="legal-link">Terms of Use</a>
+          <a href="#" class="legal-link">Privacy Policy</a>
+          <a href="#" class="legal-link">Risk Warning</a>
+          <a href="#" class="legal-link">AML Policy</a>
+          <a href="#" class="legal-link">Cookie Preferences</a>
+          <span class="legal-link">© 2023 Binance Clone</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+      
+      // Tab functionality
+      const tabs = document.querySelectorAll('.tool-tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+      
+      // Simulate ticker updates
+      setInterval(() => {
+        const tickerItems = document.querySelectorAll('.ticker-item');
+        tickerItems.forEach(item => {
+          const changeElement = item.querySelector('.change');
+          if (changeElement) {
+            const isPositive = Math.random() > 0.3;
+            const changeValue = (Math.random() * 5).toFixed(2);
+            
+            if (isPositive) {
+              changeElement.textContent = `+${changeValue}%`;
+              changeElement.className = 'change text-success';
+            } else {
+              changeElement.textContent = `-${changeValue}%`;
+              changeElement.className = 'change text-danger';
+            }
+            
+            // Update price slightly based on change
+            const priceElement = item.querySelector('.price');
+            if (priceElement) {
+              let price = parseFloat(priceElement.textContent.replace('$', '').replace(',', ''));
+              const changeFactor = isPositive ? 1 + (changeValue / 100) : 1 - (changeValue / 100);
+              price = price * changeFactor;
+              priceElement.textContent = '$' + price.toLocaleString(undefined, {maximumFractionDigits: 2});
+            }
+          }
+        });
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

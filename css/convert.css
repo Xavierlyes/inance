@@ -1,0 +1,74 @@
+/* Convert Page Specific Styles */
+.dashboard-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+.binance-text-primary {
+    color: var(--accent-yellow);
+}
+.binance-muted-text {
+    color: var(--text-secondary);
+}
+.binance-input {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    width: 100%;
+}
+.binance-input:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 2px rgba(240, 185, 11, 0.3);
+}
+.binance-asset-selector {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+}
+.binance-swap-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-yellow);
+    transition: all 0.2s ease;
+}
+.binance-swap-button:hover {
+    transform: rotate(180deg);
+    background-color: var(--border-color);
+}
+.binance-refresh-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.binance-refresh-button:hover {
+    color: var(--accent-yellow);
+}
+.binance-button-primary {
+    background: linear-gradient(to right, var(--button-gradient-start), var(--button-gradient-end));
+    color: var(--background-dark);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+}
+.binance-button-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(240, 185, 11, 0.6);
+}
+.binance-button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
